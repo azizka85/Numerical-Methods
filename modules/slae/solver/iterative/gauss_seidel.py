@@ -47,10 +47,10 @@ def gauss_seidel_relax(
         dx = math.sqrt(np.dot(x - x_old, x - x_old))        
         iter += 1
 
-        if i == k:
+        if iter % k == 0:
             dx1 = dx
 
-        if i == k + p:
+        if iter % (k + p) == 0:
             dx2 = dx
             omega = 2./(1. + math.sqrt(1. - (dx2 / dx1)**(1./p)))
 
