@@ -53,6 +53,8 @@ def matrix_sym_triplet_mult_vector(
         v = t[k][2]
 
         y[i] += v * x[j]
-        y[j] += v * x[i]
+
+        if i != j:
+            y[j] += v * x[i]
 
     return y
