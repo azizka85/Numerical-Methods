@@ -1,6 +1,6 @@
 import numpy as np
 
-def gauss_elimination(a: np.ndarray[np.double, np.double], b: np.ndarray[np.double]) -> np.ndarray:
+def gauss_elimination(a: np.ndarray[np.double, np.double], b: np.ndarray[np.double]) -> np.ndarray[np.double]:
     n = len(b)
 
     for k in range(0, n - 1):
