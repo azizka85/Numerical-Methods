@@ -77,7 +77,7 @@ def ridder(
     f2 = f(x2)    
     
     x = 1.
-    dx = 2 * tol
+    dx = 2 * tol * max(abs(x), 1.)
 
     iter = 0
 
