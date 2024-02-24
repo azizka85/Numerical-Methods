@@ -138,7 +138,7 @@ def newton_raphson(
         return None, 0
     
     x = 0.5 * (x1 + x2)
-    dx = 2 * tol
+    dx = 2 * tol * max(abs(x), 1.)
 
     iter = 0
 
