@@ -43,7 +43,7 @@ def bisection(
     if sign(f1) == sign(f2):
         return None
     
-    while x2 - x1 > tol:
+    while x2 - x1 > tol * max(abs(x1), max(abs(x2), 1.)):
         x3 = 0.5 * (x1 + x2)
         f3 = f(x3)
 
