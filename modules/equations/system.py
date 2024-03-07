@@ -11,7 +11,7 @@ def newton_raphson_system(
     dx = 2 * tol * np.ones(len(x))
     iter = 0
 
-    while max(abs(dx)) > tol * max(max(abs(x)), 1.) and iter < max_iter:
+    while max(abs(dx)) > tol and iter < max_iter:
         jac, f0 = jacobian(f, x, h)
         dx = gauss_elimination(jac, -f0)
 

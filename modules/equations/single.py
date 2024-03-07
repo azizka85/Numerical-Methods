@@ -43,7 +43,7 @@ def bisection(
     if sign(f1) == sign(f2):
         return None
     
-    while x2 - x1 > tol * max(abs(x1), max(abs(x2), 1.)):
+    while x2 - x1 > tol:
         x3 = 0.5 * (x1 + x2)
         f3 = f(x3)
 
@@ -77,11 +77,11 @@ def ridder(
     f2 = f(x2)    
     
     x = 1.
-    dx = 2 * tol * max(abs(x), 1.)
+    dx = 2 * tol
 
     iter = 0
 
-    while abs(dx) > tol * max(abs(x), 1.) and iter < max_iter:
+    while abs(dx) > tol and iter < max_iter:
         x3 = 0.5 * (x1 + x2)
         f3 = f(x3)
 
@@ -138,11 +138,11 @@ def newton_raphson(
         return None, 0
     
     x = 0.5 * (x1 + x2)
-    dx = 2 * tol * max(abs(x), 1.)
+    dx = 2 * tol
 
     iter = 0
 
-    while abs(dx) > tol * max(abs(x), 1.) and iter < max_iter:
+    while abs(dx) > tol and iter < max_iter:
         fx = f(x)
 
         if abs(fx) <= tol:
