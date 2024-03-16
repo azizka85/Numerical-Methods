@@ -81,7 +81,7 @@ def ridder(
 
     iter = 0
 
-    while abs(dx) > tol * max(abs(x), 1.) and iter < max_iter:
+    while abs(dx) > tol and iter < max_iter:
         x3 = 0.5 * (x1 + x2)
         f3 = f(x3)
 
@@ -138,11 +138,11 @@ def newton_raphson(
         return None, 0
     
     x = 0.5 * (x1 + x2)
-    dx = 2 * tol * max(abs(x), 1.)
+    dx = 2 * tol
 
     iter = 0
 
-    while abs(dx) > tol * max(abs(x), 1.) and iter < max_iter:
+    while abs(dx) > tol and iter < max_iter:
         fx = f(x)
 
         if abs(fx) <= tol:
